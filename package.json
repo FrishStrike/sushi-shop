@@ -1,0 +1,33 @@
+{
+  "name": "sushi-shop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "go": "concurrently \"yarn run server\" \"yarn run dev\"",
+    "dev": "next dev",
+    "server": "json-server --watch db.json --port 3004",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.29.14",
+    "@types/node": "20.3.1",
+    "@types/react": "18.2.12",
+    "@types/react-dom": "18.2.5",
+    "axios": "^1.4.0",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.6",
+    "next": "13.4.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.9.0",
+    "react-redux": "^8.1.0",
+    "typescript": "5.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "sass": "^1.63.4"
+  }
+}

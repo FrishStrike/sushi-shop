@@ -1,0 +1,60 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "title": "Smashed Avo",
+      "price": "$20.00",
+      "img": "/img/SmashedAvo.jpg",
+      "bought": false
+    },
+    {
+      "id": 2,
+      "title": "Yin & Yang",
+      "price": "$10.00",
+      "img": "/img/Yin&Yang.jpg",
+      "bought": false
+    },
+    {
+      "id": 3,
+      "title": "Pancakes",
+      "price": "$25.00",
+      "img": "/img/Pancakes.jpg",
+      "bought": false
+    },
+    {
+      "id": 4,
+      "title": "Huevos Rancheros",
+      "price": "$25.00",
+      "img": "/img/HuevosRancheros.jpg",
+      "bought": false
+    },
+    {
+      "id": 5,
+      "title": "Rancheros (Tofu)",
+      "price": "$20.00",
+      "img": "/img/Rancheros(Tofu).jpg",
+      "bought": false
+    },
+    {
+      "id": 6,
+      "title": "Breakkie Roll",
+      "price": "$10.00",
+      "img": "/img/BreakkieRoll.jpg",
+      "bought": false
+    },
+    {
+      "id": 7,
+      "title": "Breakkie Roll",
+      "price": "$15.00",
+      "img": "/img/BreakkieRoll2.jpg",
+      "bought": false
+    },
+    {
+      "id": 8,
+      "title": "Burrito",
+      "price": "$25.00",
+      "img": "/img/Burrito.jpg",
+      "bought": false
+    }
+  ]
+}
