@@ -21,6 +21,7 @@ a {
 
   margin: 43px 102px 0 300px;
 
+  // title
   h1 {
     display: inline-block;
     font-style: normal;
@@ -130,16 +131,80 @@ a {
   }
 }
 
+// page cart
+
 .cart-content {
   display: flex;
   gap: 41px;
 
   .left-cart {
     width: 500px;
-    height: 500px;
+    min-height: 500px;
+    overflow: hidden;
 
     background: #f1d5bb;
     border-radius: 3px;
+
+    padding: 20px 15px;
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+
+      .cart-info {
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .cart-handle {
+        display: flex;
+        gap: 10px;
+        user-select: none;
+
+        div {
+          padding: 5px 10px;
+          background: #fff;
+        }
+
+        span {
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+
+      button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        position: relative;
+
+        span {
+          position: absolute;
+          left: 3px;
+          background: rgba(0, 0, 0, 0.6);
+          width: 20px;
+          height: 2px;
+        }
+        span:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        span:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
 
     h2 {
       font-size: 40px;
@@ -152,6 +217,9 @@ a {
   .right-cart {
     width: 333px;
     height: 500px;
+    position: relative;
+    position: fixed;
+    left: 56%;
 
     background: #f1d5bb;
     border-radius: 3px;

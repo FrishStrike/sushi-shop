@@ -1,4 +1,4 @@
-import { CardItem } from "@/store/cardSlice";
+import { CardItem } from "@/types/card.interface";
 import axios from "axios";
 
 const BASE_URL = "http://localhost:3004/cards";

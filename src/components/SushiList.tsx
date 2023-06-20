@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import { getCards } from "@/services/cards.service";
 import { useAppDispatch } from "@/store/hook";
 import { addCard } from "@/store/cardSlice";
-import { useSelector } from "react-redux";
 
 const SushiList = () => {
   const { data, isLoading, isError } = useQuery({
@@ -14,13 +13,13 @@ const SushiList = () => {
   });
 
   const dispatch = useAppDispatch();
-  const selector = useSelector((state) => state);
 
   useEffect(() => {
     data?.data.map((card) =>
       dispatch(
         addCard({
           id: card.id,
+          quantity: 1,
           title: card.title,
           img: card.img,
           price: card.price,
@@ -61,6 +60,7 @@ const SushiList = () => {
             <CardItem
               key={card.id}
               id={card.id}
+              quantity={card.quantity}
               title={card.title}
               img={card.img}
               price={card.price}
