@@ -1,4 +1,4 @@
-export interface CardItem {
+export interface ICardItem {
   id: number;
   quantity: number;
   title: string;
@@ -7,6 +7,6 @@ export interface CardItem {
   bought: boolean;
 }
 
-export interface CardList {
-  cards: CardItem[];
+export interface ICardList {
+  cards: ICardItem[];
 }

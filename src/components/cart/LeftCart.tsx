@@ -14,37 +14,41 @@ const LeftCart = () => {
         if (card.bought) {
           return (
             <div className="cart-item">
-              <img src={card.img} alt="" />
-              <div className="cart-info">
-                <h3>{card.title}</h3>
-                <p>{card.price}</p>
+              <div className="cart-logo">
+                <img src={card.img} alt="" />
+                <div className="cart-info">
+                  <h3>{card.title}</h3>
+                  <p>{card.price}</p>
+                </div>
               </div>
-              <div className="cart-handle">
-                <span
+              <div className="cart-func">
+                <div className="cart-handle">
+                  <span
+                    onClick={() => {
+                      dispatch(handleQuantity({ id: card.id, act: false }));
+                    }}
+                  >
+                    -
+                  </span>
+                  <div>{card.quantity}</div>
+                  <span
+                    onClick={() => {
+                      dispatch(handleQuantity({ id: card.id, act: true }));
+                    }}
+                  >
+                    +
+                  </span>
+                </div>
+                <button
+                  className="cart-button"
                   onClick={() => {
-                    dispatch(handleQuantity({ id: card.id, act: false }));
+                    dispatch(handleCard(card.id));
                   }}
                 >
-                  -
-                </span>
-                <div>{card.quantity}</div>
-                <span
-                  onClick={() => {
-                    dispatch(handleQuantity({ id: card.id, act: true }));
-                  }}
-                >
-                  +
-                </span>
+                  <span></span>
+                  <span></span>
+                </button>
               </div>
-              <button
-                className="cart-button"
-                onClick={() => {
-                  dispatch(handleCard(card.id));
-                }}
-              >
-                <span></span>
-                <span></span>
-              </button>
             </div>
           );
         }

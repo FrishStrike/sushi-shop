@@ -68,6 +68,21 @@ a {
   }
 }
 
+.arrows {
+  position: absolute;
+  width: 1095px;
+  left: 242px;
+  top: 410px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -98,7 +113,6 @@ a {
       }
 
       .cart {
-        // color: white;
         cursor: pointer;
         width: 30px;
         height: 30px;
@@ -139,78 +153,99 @@ a {
 
   .left-cart {
     width: 500px;
-    min-height: 500px;
+
     overflow: hidden;
+    margin-bottom: 50px;
 
     background: #f1d5bb;
     border-radius: 3px;
 
     padding: 20px 15px;
 
+    transition: 0.5s ease;
+
     .cart-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 20px;
+      transition: 0.5s ease-in-out;
 
-      img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
+      &:last-child {
+        margin-bottom: 0;
       }
 
-      .cart-info {
-        height: 80px;
+      .cart-logo {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-      }
+        gap: 20px;
 
-      .cart-handle {
-        display: flex;
-        gap: 10px;
-        user-select: none;
-
-        div {
-          padding: 5px 10px;
-          background: #fff;
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
         }
 
-        span {
+        .cart-info {
+          height: 80px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+
+      .cart-func {
+        display: flex;
+        gap: 40px;
+
+        .cart-handle {
+          display: flex;
+          gap: 10px;
+          user-select: none;
+
+          div {
+            padding: 5px 10px;
+            background: #fff;
+          }
+
+          span {
+            cursor: pointer;
+            font-size: 20px;
+          }
+        }
+
+        button {
+          border: none;
+          background: transparent;
           cursor: pointer;
-          font-size: 20px;
-        }
-      }
+          width: 25px;
+          height: 25px;
+          position: relative;
 
-      button {
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        width: 25px;
-        height: 25px;
-        position: relative;
-
-        span {
-          position: absolute;
-          left: 3px;
-          background: rgba(0, 0, 0, 0.6);
-          width: 20px;
-          height: 2px;
-        }
-        span:nth-child(1) {
-          transform: rotate(45deg);
-        }
-        span:nth-child(2) {
-          transform: rotate(-45deg);
+          span {
+            position: absolute;
+            left: 3px;
+            background: rgba(0, 0, 0, 0.6);
+            width: 20px;
+            height: 2px;
+          }
+          span:nth-child(1) {
+            transform: rotate(45deg);
+          }
+          span:nth-child(2) {
+            transform: rotate(-45deg);
+          }
         }
       }
     }
 
     h2 {
+      transition: 0.5s ease;
       font-size: 40px;
       line-height: 50px;
       text-align: center;
-      margin-top: 200px;
+      // margin-top: 200px;
+      transform: translateY(200px);
+      height: 460px;
     }
   }
 
@@ -302,8 +337,9 @@ a {
 
 footer {
   position: fixed;
-  width: 250px;
+  width: 2500px;
+
   height: 19px;
-  left: 244px;
+  left: 1100px;
   top: 730px;
 }

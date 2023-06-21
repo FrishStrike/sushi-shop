@@ -1,7 +1,7 @@
-import { CardItem } from "@/types/card.interface";
+import { ICardItem } from "@/types/card.interface";
 import CartButton from "./CartButton";
 
-const CardItem: React.FC<CardItem> = ({ title, img, price, id }) => {
+const CardItem: React.FC<ICardItem> = ({ title, img, price, id }) => {
   return (
     <div className="card">
       <img src={img} alt="" />

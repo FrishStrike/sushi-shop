@@ -1,13 +1,13 @@
-import { CardItem, CardList } from "@/types/card.interface";
+import { ICardItem, ICardList } from "@/types/card.interface";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-const initialState: CardList = { cards: [] };
+const initialState: ICardList = { cards: [] };
 
 const cardSlice = createSlice({
   name: "card",
   initialState,
   reducers: {
-    addCard(state, action: PayloadAction<CardItem>) {
+    addCard(state, action: PayloadAction<ICardItem>) {
       state.cards.push(action.payload);
     },
     handleCard(state, action: PayloadAction<number>) {

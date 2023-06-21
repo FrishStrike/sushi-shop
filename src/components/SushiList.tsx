@@ -1,18 +1,27 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import CardItem from "./CardItem";
 import { useQuery } from "@tanstack/react-query";
-import { getCards } from "@/services/cards.service";
+import { getCardsPagination } from "@/services/cards.service";
 import { useAppDispatch } from "@/store/hook";
 import { addCard } from "@/store/cardSlice";
+import { ICardItem } from "@/types/card.interface";
 
 const SushiList = () => {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["cards"],
-    queryFn: getCards,
-  });
-
   const dispatch = useAppDispatch();
+  const [cards, setCards] = useState<ICardItem[]>([]);
+  const [page, setPage] = useState(1);
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["cards", page],
+    queryFn: () => {
+      setCards([]);
+      const first = page * 8 - 8;
+      const second = page * 8;
+      return getCardsPagination(first, second);
+    },
+    keepPreviousData: true,
+  });
 
   useEffect(() => {
     data?.data.map((card) =>
@@ -27,6 +36,13 @@ const SushiList = () => {
         })
       )
     );
+  }, [data]);
+
+  useMemo(() => {
+    if (data) {
+      setCards(data.data);
+      console.log(data.data);
+    }
   }, [data]);
 
   if (isLoading) {
@@ -54,9 +70,34 @@ const SushiList = () => {
 
   return (
     <main>
+      <div className="arrows">
+        {page !== 1 ? (
+          <img src="/arrow-left.svg" alt="" onClick={() => setPage(page - 1)} />
+        ) : (
+          <img
+            src="/arrow-left.svg"
+            alt=""
+            style={{ opacity: 0, cursor: "default" }}
+          />
+        )}
+
+        {cards.length === 8 ? (
+          <img
+            src="/arrow-right.svg"
+            alt=""
+            onClick={() => setPage(page + 1)}
+          />
+        ) : (
+          <img
+            src="/arrow-left.svg"
+            alt=""
+            style={{ opacity: 0, cursor: "default" }}
+          />
+        )}
+      </div>
       <div className="container">
         <div className="cards">
-          {data?.data.map((card) => (
+          {cards.map((card) => (
             <CardItem
               key={card.id}
               id={card.id}
