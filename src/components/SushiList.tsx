@@ -6,13 +6,14 @@ import { getCardsPagination } from "@/services/cards.service";
 import { useAppDispatch } from "@/store/hook";
 import { addCard } from "@/store/cardSlice";
 import { ICardItem } from "@/types/card.interface";
+import Arrows from "./Arrows";
 
 const SushiList = () => {
   const dispatch = useAppDispatch();
   const [cards, setCards] = useState<ICardItem[]>([]);
   const [page, setPage] = useState(1);
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["cards", page],
     queryFn: () => {
       setCards([]);
@@ -54,6 +55,8 @@ const SushiList = () => {
   }
 
   if (isError) {
+    console.log(error);
+
     return (
       <div className="container">
         <h3>Error</h3>
@@ -70,31 +73,7 @@ const SushiList = () => {
 
   return (
     <main>
-      <div className="arrows">
-        {page !== 1 ? (
-          <img src="/arrow-left.svg" alt="" onClick={() => setPage(page - 1)} />
-        ) : (
-          <img
-            src="/arrow-left.svg"
-            alt=""
-            style={{ opacity: 0, cursor: "default" }}
-          />
-        )}
-
-        {cards.length === 8 ? (
-          <img
-            src="/arrow-right.svg"
-            alt=""
-            onClick={() => setPage(page + 1)}
-          />
-        ) : (
-          <img
-            src="/arrow-left.svg"
-            alt=""
-            style={{ opacity: 0, cursor: "default" }}
-          />
-        )}
-      </div>
+      <Arrows page={page} cards={cards} setPage={setPage} />
       <div className="container">
         <div className="cards">
           {cards.map((card) => (
@@ -110,6 +89,7 @@ const SushiList = () => {
           ))}
         </div>
       </div>
+      <Arrows page={page} cards={cards} setPage={setPage} second={true} />
     </main>
   );
 };

@@ -22,6 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width" />
+      </head>
       <body className={mulish.className}>
         <SideBar />
         <QueryProvider>

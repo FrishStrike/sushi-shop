@@ -16,12 +16,15 @@ a {
 }
 
 .container {
-  width: 1095px;
+  max-width: 1095px;
   // height: 111px;
 
-  margin: 43px 102px 0 300px;
+  margin: 3% 0 0 19%;
 
   // title
+}
+
+header {
   h1 {
     display: inline-block;
     font-style: normal;
@@ -31,16 +34,48 @@ a {
 
     border-bottom: 5px solid #f1d5bb;
   }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: 0.3s ease;
+
+    .menu-item {
+      color: #fff;
+      padding: 50px 0;
+      font-size: 56px;
+      list-style: none;
+
+      text-align: center;
+    }
+  }
+  .menu-open {
+    transform: translateY(0);
+  }
 }
 
 .nav {
   user-select: none;
-  width: 132px;
+  max-width: 132px;
   height: 666px;
   background: #0c0b0b;
   border-radius: 24px;
   position: fixed;
-  left: 57px;
+  left: 4%;
   top: 43px;
   box-shadow: 10px 0 50px 1px rgba(29, 6, 6, 0.589);
 
@@ -71,9 +106,24 @@ a {
 .arrows {
   position: absolute;
   width: 1095px;
-  left: 242px;
+  left: 15%;
   top: 410px;
   display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+main .arrows-second {
+  position: initial;
+  display: none;
+  width: 300px;
+  margin: 20px 40px;
+
   justify-content: space-between;
   cursor: pointer;
 
@@ -152,7 +202,7 @@ a {
   gap: 41px;
 
   .left-cart {
-    width: 500px;
+    width: 44%;
 
     overflow: hidden;
     margin-bottom: 50px;
@@ -252,7 +302,6 @@ a {
   .right-cart {
     width: 333px;
     height: 500px;
-    position: relative;
     position: fixed;
     left: 56%;
 
@@ -340,6 +389,236 @@ footer {
   width: 2500px;
 
   height: 19px;
-  left: 1100px;
+  left: 80%;
   top: 730px;
+}
+
+@media (max-width: 1275px) {
+  .arrows {
+    width: 100px;
+    top: 55px;
+    left: 90%;
+  }
+
+  footer {
+    top: 97%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav {
+    display: none;
+    position: fixed;
+    left: 2%;
+  }
+  .arrows {
+    width: 70px;
+    top: 15px;
+    left: 360px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .menu-btn {
+      margin-right: 10px;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 200;
+    }
+  }
+
+  .btn-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #f1d5bb;
+    height: 5px;
+    transition: 0.3s ease;
+  }
+
+  .btn-line:nth-child(1) {
+    top: 0;
+  }
+  .btn-line:nth-child(2) {
+    top: 20px;
+  }
+  .btn-line:nth-child(3) {
+    top: 20px;
+  }
+  .btn-line:nth-child(4) {
+    top: 40px;
+  }
+
+  .button-open .btn-line:nth-child(1) {
+    transform: scaleX(0);
+  }
+  .button-open .btn-line:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .button-open .btn-line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  .button-open .btn-line:nth-child(4) {
+    transform: scaleX(0);
+  }
+
+  .container {
+    margin: 1% 0 0 4%;
+  }
+
+  .card {
+    width: 220px;
+  }
+
+  .cart {
+    margin-right: 10px;
+  }
+
+  footer {
+    left: 70%;
+    top: 97%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cart-content {
+    flex-direction: column;
+
+    .left-cart {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .right-cart {
+      position: initial;
+
+      display: flex;
+      justify-content: space-between;
+
+      width: 95%;
+      max-height: 300px;
+
+      margin: 0 auto 30px;
+
+      .right-top-cart {
+        width: 300px;
+        height: 250px;
+
+        button {
+          font-size: 20px;
+        }
+      }
+
+      .right-bottom-cart {
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .cart-content .right-cart .right-top-cart {
+    padding: 20px 10px;
+
+    h2 {
+      font-size: 26px;
+    }
+
+    .right-top-cart {
+      button {
+        padding: 20px 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-content {
+    .right-cart {
+      flex-direction: column;
+      width: 85%;
+
+      .right-bottom-cart {
+        width: 100%;
+      }
+    }
+  }
+  footer {
+    left: 50%;
+    top: 97%;
+  }
+  .arrows {
+    width: 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .arrows {
+    left: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arrows {
+    display: none;
+  }
+
+  main .arrows-second {
+    display: flex;
+  }
+
+  .container h1 {
+    font-size: 40px;
+  }
+
+  .cart-info h3 {
+    font-size: 14px;
+  }
+
+  .cart-content .left-cart .cart-item .cart-func {
+    gap: 20px;
+  }
+
+  .cart-content .left-cart .cart-item .cart-logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cards .card {
+    width: 350px;
+    height: 350px;
+
+    .card-info {
+      width: 350px;
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    img {
+      width: 350px;
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .cart-content .left-cart h2 {
+    font-size: 30px;
+  }
+
+  .cart-content .left-cart .cart-item .cart-logo img {
+    width: 50px;
+    height: 50px;
+  }
 }
