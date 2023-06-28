@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import { Baloo_Bhai_2 } from "next/font/google";
+import { BiLogIn, BiLogOut } from "react-icons/bi";
+import { useSession, signOut } from "next-auth/react";
 
 const balooBhai = Baloo_Bhai_2({
   weight: ["600"],
@@ -7,6 +10,8 @@ const balooBhai = Baloo_Bhai_2({
 });
 
 const SideBar = () => {
+  const session = useSession();
+
   return (
     <nav className="nav">
       <div>
@@ -35,9 +40,15 @@ const SideBar = () => {
         </Link>
       </div>
       <div>
-        <Link href="/">
-          <img src="/exit.svg" alt="" />
-        </Link>
+        {session?.data ? (
+          <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+            <BiLogOut color="white" size={50} />
+          </Link>
+        ) : (
+          <Link href="/api/auth/signin">
+            <BiLogIn color="white" size={50} />
+          </Link>
+        )}
       </div>
     </nav>
   );

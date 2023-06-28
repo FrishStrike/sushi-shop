@@ -1,23 +1,25 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import ImageProfile from "./ImageProfile";
 
 const NavBar = () => {
-  const [navClass, setNavClass] = useState("");
+  const [ulClass, setUlClass] = useState("");
   const [buttonClass, setButtonClass] = useState("");
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav>
+    <nav className="navbar">
+      <ImageProfile className={ulClass} />
       <button
         onClick={() => {
           if (!toggle) {
             setButtonClass("button-open");
-            setNavClass("menu-open");
+            setUlClass("menu-open");
             setToggle(!toggle);
           } else {
             setButtonClass("");
-            setNavClass("");
+            setUlClass("");
             setToggle(!toggle);
           }
         }}
@@ -30,7 +32,7 @@ const NavBar = () => {
         <span className="btn-line"></span>
       </button>
 
-      <ul className={`menu ${navClass}`}>
+      <ul className={`menu ${ulClass}`}>
         <li className="menu-item">
           <Link className="menu-link" href="/">
             Home

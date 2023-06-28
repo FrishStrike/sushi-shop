@@ -1,8 +1,6 @@
 import "./globals.scss";
 import { Mulish } from "next/font/google";
-import SushiFooter from "@/components/SushiFooter";
-import Provider from "@/store/provider";
-import QueryProvider from "@/store/QueryProvider";
+import { Providers } from "@/components/Providers";
 
 const mulish = Mulish({
   weight: ["800", "600", "400", "300", "200"],
@@ -25,9 +23,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width" />
       </head>
       <body className={mulish.className}>
-        <QueryProvider>
-          <Provider>{children}</Provider>
-        </QueryProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
