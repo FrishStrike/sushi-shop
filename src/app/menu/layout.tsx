@@ -1,6 +1,4 @@
 import SideBar from "@/components/SideBar";
-import SushiFooter from "@/components/SushiFooter";
-import SushiHeader from "@/components/SushiHeader";
 
 export const metadata = {
   title: "Cart",
@@ -15,9 +13,7 @@ export default function CartLayout({
   return (
     <>
       <SideBar />
-      <SushiHeader title="CART" />
       {children}
-      <SushiFooter />
     </>
   );
 }

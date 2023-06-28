@@ -4,7 +4,7 @@ import RightCard from "@/components/cart/RightCard";
 const page = () => {
   return (
     <main>
-      <div className="container">
+      <div className="container container-cart">
         <div className="cart-content">
           <LeftCart />
           <RightCard />

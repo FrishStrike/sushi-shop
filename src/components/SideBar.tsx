@@ -10,7 +10,7 @@ const SideBar = () => {
   return (
     <nav className="nav">
       <div>
-        <Link className={balooBhai.className} href="/main">
+        <Link className={balooBhai.className} href="/">
           S.
         </Link>
       </div>
@@ -20,7 +20,7 @@ const SideBar = () => {
         </Link>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/menu">
           <img src="/menu.svg" alt="" />
         </Link>
       </div>

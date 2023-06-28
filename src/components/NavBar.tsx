@@ -32,12 +32,12 @@ const NavBar = () => {
 
       <ul className={`menu ${navClass}`}>
         <li className="menu-item">
-          <Link className="menu-link" href="#">
+          <Link className="menu-link" href="/">
             Home
           </Link>
         </li>
         <li className="menu-item">
-          <Link className="menu-link" href="/">
+          <Link className="menu-link" href="/menu">
             Menu
           </Link>
         </li>
