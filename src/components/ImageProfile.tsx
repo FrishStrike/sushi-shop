@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 interface Props {
   className?: string;
@@ -17,7 +17,7 @@ const ImageProfile: React.FC<Props> = ({ className }) => {
       {session?.data?.user?.image ? (
         <img src={session.data.user.image} alt="" />
       ) : (
-        <FaRegUserCircle size={55} />
+        <FaUserCircle size={55} />
       )}
     </div>
   );

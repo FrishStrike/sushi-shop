@@ -1,4 +1,13 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "nickname": "Frish",
+      "email": "frishstrike@gmail.com",
+      "password": "123321"
+    }
+  ],
+
   "cards": [
     {
       "id": 1,

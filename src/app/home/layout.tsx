@@ -3,11 +3,11 @@ import SushiFooter from "@/components/SushiFooter";
 import SushiHeader from "@/components/SushiHeader";
 
 export const metadata = {
-  title: "Cart",
-  description: "A great sushi, nice your meal",
+  title: "Home",
+  description: "Sushi shop with the best sushi in the whole world!",
 };
 
-export default function CartLayout({
+export default function HomeLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ export default function CartLayout({
   return (
     <>
       <SideBar />
-      <SushiHeader title="CART" />
+      <SushiHeader title="Location" />
       {children}
       <SushiFooter />
     </>
