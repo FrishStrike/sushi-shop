@@ -1,0 +1,43 @@
+// SideBar
+
+.nav {
+  user-select: none;
+  max-width: 132px;
+  height: 666px;
+  background: #0c0b0b;
+  border-radius: 24px;
+  position: fixed;
+  left: 4%;
+  top: 43px;
+  box-shadow: 10px 0 50px 1px rgba(29, 6, 6, 0.589);
+
+  .item-select {
+    background: #f1d5bb;
+  }
+
+  div {
+    width: 132px;
+    height: 111px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(1) {
+      position: relative;
+      left: 5px;
+
+      color: #f1d5bb;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 102px;
+    }
+
+    &:nth-child(6) {
+      position: relative;
+      right: 8px;
+    }
+  }
+}

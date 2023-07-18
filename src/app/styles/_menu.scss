@@ -1,0 +1,63 @@
+// Menu page
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .card {
+    width: 230px;
+    height: 265px;
+    border: 3px solid #0c0b0b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s ease;
+
+    &:hover {
+      background: #b0e8ef;
+    }
+
+    .card-info {
+      position: relative;
+      z-index: 1;
+      width: 230px;
+      height: 100px;
+      transition: 0.5s ease;
+
+      h3 {
+        text-align: center;
+        padding-top: 20px;
+      }
+
+      .cart {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        z-index: 2;
+        right: 8px;
+      }
+
+      .price {
+        margin-left: 10px;
+
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+
+    img {
+      display: block;
+      position: relative;
+      z-index: 0;
+      width: 230px;
+      height: 180px;
+      transition: 0.5s ease;
+      overflow: hidden;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

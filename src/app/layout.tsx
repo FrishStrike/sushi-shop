@@ -1,4 +1,6 @@
-import "./globals.scss";
+"use client";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import "./styles/globals.scss";
 import { Mulish } from "next/font/google";
 import { Providers } from "@/components/Providers";
 
@@ -23,7 +25,15 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width" />
       </head>
       <body className={mulish.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <ProgressBar
+            height="4px"
+            color="#D64B4B"
+            options={{ showSpinner: false }}
+            shallowRouting
+          />
+        </Providers>
       </body>
     </html>
   );

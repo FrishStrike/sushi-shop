@@ -1,0 +1,138 @@
+// Header and NavBar
+
+header {
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .img-profile {
+      position: relative;
+      top: 10px;
+      right: 10%;
+
+      img {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        box-shadow: 0 0 7px 5px #f1d5bb;
+        transition: 0.5s ease;
+
+        &:hover {
+          box-shadow: 0 0 17px 15px #c23838;
+        }
+      }
+    }
+
+    h1 {
+      display: inline-block;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 63px;
+
+      margin-right: 3%;
+
+      border-bottom: 5px solid #f1d5bb;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 20px 24px;
+      border-radius: 30px;
+
+      background: black;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // NavBar
+
+  .navbar {
+    // Location Icon
+    div {
+      position: absolute;
+      z-index: 300;
+      top: 20px;
+      left: 10px;
+      transform: translateY(-300%);
+      transition: 0.5s ease;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    svg {
+      z-index: 200;
+      fill: white;
+    }
+
+    .location-icon {
+      position: absolute;
+      z-index: 200;
+      fill: white;
+      bottom: 3%;
+      left: 1%;
+      transform: translateX(-300%);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .menu-btn {
+      display: none;
+      margin-top: 22px;
+    }
+    .menu {
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transform: translateY(-100%);
+      transition: 0.3s ease;
+
+      .menu-item {
+        color: #fff;
+        padding: 50px 0;
+        font-size: 56px;
+        list-style: none;
+
+        text-align: center;
+
+        &:last-child {
+          position: absolute;
+          right: 4%;
+          bottom: -7%;
+        }
+      }
+
+      .logo-navbar {
+        position: absolute;
+        left: 48%;
+        top: -60px;
+
+        color: #f1d5bb;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 102px;
+      }
+    }
+    .menu-open {
+      transform: translateY(0) !important;
+    }
+  }
+}

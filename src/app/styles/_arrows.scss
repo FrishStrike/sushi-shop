@@ -1,0 +1,29 @@
+.arrows {
+  position: absolute;
+  width: 1095px;
+  left: 15%;
+  top: 410px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+main .arrows-second {
+  position: initial;
+  display: none;
+  width: 300px;
+  margin: 20px 40px;
+
+  justify-content: space-between;
+  cursor: pointer;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}

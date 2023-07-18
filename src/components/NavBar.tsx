@@ -20,7 +20,7 @@ const NavBar = () => {
     <nav className="navbar">
       <ImageProfile className={ulClass} />
       <MdLocationPin
-        className={ulClass}
+        className={`location-icon ${ulClass}`}
         size={55}
         onClick={() => router.push("/location")}
       />

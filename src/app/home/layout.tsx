@@ -15,7 +15,7 @@ export default function HomeLayout({
   return (
     <>
       <SideBar />
-      <SushiHeader title="Location" />
+      <SushiHeader title="Home" />
       {children}
       <SushiFooter />
     </>

@@ -1,0 +1,138 @@
+.home-container {
+  margin: 30px 0;
+  display: flex;
+  gap: 10vw;
+}
+
+// First Swiper
+
+.container .first-swiper {
+  width: 90%;
+  height: 500px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 15px #b0e8ef;
+  border-radius: 20px;
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Cards Swiper
+
+.carousel-content {
+  // width: 100%;
+  display: block;
+
+  .swiper {
+    max-width: 300px;
+    height: 400px;
+
+    position: relative;
+    margin: 0 0;
+    // left: 60%;
+    // bottom: -400px;
+  }
+
+  swiper-slide {
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .swiper-slide {
+    box-shadow: 0 0 10px 10px red;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 35px;
+    width: 40px;
+    text-shadow: 2px 2px 1px black;
+
+    .swiper-content {
+      width: 100%;
+      text-align: center;
+    }
+
+    &:nth-child(1) {
+      background: url("/slider-img/sushi.jpeg");
+      background-size: cover;
+    }
+    &:nth-child(2) {
+      background: url("/slider-img/sushi2.jpeg");
+      background-size: cover;
+    }
+    &:nth-child(3) {
+      background: url("/slider-img/sushi3.webp");
+      background-size: cover;
+    }
+  }
+}
+
+// Right Blog
+
+.the-best-thing {
+  width: 420px;
+  height: 500px;
+  background-color: transparent;
+  border: 4px solid black;
+  border-radius: 20px;
+  // margin-right: 200px;
+  box-shadow: 5px 5px 10px 5px #d6fccb;
+
+  h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .list-goods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+
+    .goods-item {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        box-shadow: 0 0 15px 10px #b0e8ef;
+
+        margin-left: 30px;
+        margin-right: 15%;
+      }
+
+      p {
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
+  }
+}
