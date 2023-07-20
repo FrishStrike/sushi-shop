@@ -25,15 +25,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width" />
       </head>
       <body className={mulish.className}>
-        <Providers>
-          {children}
-          <ProgressBar
-            height="4px"
-            color="#D64B4B"
-            options={{ showSpinner: false }}
-            shallowRouting
-          />
-        </Providers>
+        <ProgressBar
+          height="4px"
+          color="#D64B4B"
+          options={{ showSpinner: false }}
+          shallowRouting
+        />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -6,20 +6,38 @@ header {
     display: flex;
     justify-content: space-between;
 
+    .sign-in-btn {
+      margin-right: 110px;
+      font-size: 20px;
+      padding: 20px 24px;
+      border: 3px solid black;
+      border-radius: 30px;
+      transition: 0.3s ease;
+
+      background: rgba(0, 0, 0, 0.91);
+      color: #fff;
+      cursor: pointer;
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+
     .img-profile {
       position: relative;
       top: 10px;
       right: 10%;
+      cursor: pointer;
 
       img {
         border-radius: 50%;
         width: 70px;
         height: 70px;
-        box-shadow: 0 0 7px 5px #f1d5bb;
+        box-shadow: 0 0 7px 5px #bbe8f1;
         transition: 0.5s ease;
 
         &:hover {
-          box-shadow: 0 0 17px 15px #c23838;
+          box-shadow: 0 0 17px 15px #bbe8f1;
         }
       }
     }
@@ -35,26 +53,33 @@ header {
 
       border-bottom: 5px solid #f1d5bb;
     }
-
-    button {
-      font-size: 20px;
-      padding: 20px 24px;
-      border-radius: 30px;
-
-      background: black;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s ease;
-
-      &:active {
-        transform: scale(1.1);
-      }
-    }
   }
 
   // NavBar
 
   .navbar {
+    .sign-in-btn {
+      font-size: 20px;
+      padding: 20px 24px;
+      border: 2px solid white;
+      border-radius: 30px;
+
+      background: rgba(0, 0, 0, 0.91);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s ease;
+      transform: translateY(-300%);
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 500;
+
+      &:active {
+        // filter: brightness(120
+        background: #01191e;
+      }
+    }
+
     // Location Icon
     div {
       position: absolute;

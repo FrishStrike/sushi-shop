@@ -18,7 +18,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <ImageProfile className={ulClass} />
+      <ImageProfile className={`${ulClass} navbar-btn`} />
       <MdLocationPin
         className={`location-icon ${ulClass}`}
         size={55}

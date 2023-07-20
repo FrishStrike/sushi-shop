@@ -55,7 +55,7 @@ const LeftCart = () => {
         countBoughtIsFalse++;
         return;
       })}
-      {cards.length === countBoughtIsFalse && <h2>A cart is empty!</h2>}
+      {cards.length === countBoughtIsFalse && <h2>The cart is empty!</h2>}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 "use client";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { FaUserCircle } from "react-icons/fa";
 
 interface Props {
@@ -9,7 +9,11 @@ interface Props {
 const ImageProfile: React.FC<Props> = ({ className }) => {
   const session = useSession();
   if (!session?.data) {
-    return;
+    return (
+      <button className={`sign-in-btn ${className}`} onClick={() => signIn()}>
+        Sign In
+      </button>
+    );
   }
 
   return (

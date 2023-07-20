@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "go": "concurrently \"yarn run server\" \"yarn run dev\"",
     "dev": "next dev",
     "server": "json-server --watch db.json --port 3004",
     "build": "next build",

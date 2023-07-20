@@ -8,7 +8,7 @@
 
 .container .first-swiper {
   width: 90%;
-  height: 500px;
+  height: 450px;
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 20px;
@@ -45,7 +45,7 @@
     height: 400px;
 
     position: relative;
-    margin: 0 0;
+    margin: 40px 0;
     // left: 60%;
     // bottom: -400px;
   }
@@ -88,7 +88,7 @@
   }
 }
 
-// Right Blog
+// Left Blog
 
 .the-best-thing {
   width: 420px;
@@ -97,7 +97,7 @@
   border: 4px solid black;
   border-radius: 20px;
   // margin-right: 200px;
-  box-shadow: 5px 5px 10px 5px #d6fccb;
+  box-shadow: 5px 5px 10px 5px #bbe8f1;
 
   h2 {
     text-align: center;
@@ -112,16 +112,21 @@
     flex-direction: column;
     align-items: center;
     gap: 3vh;
+    padding: 0 15px;
 
     .goods-item {
       width: 100%;
       height: 100px;
       display: flex;
       align-items: center;
+      border: 3px solid black;
+      border-radius: 50px;
+      padding: 5px 0;
+      background: #c9f3fc32;
 
       img {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         box-shadow: 0 0 15px 10px #b0e8ef;
 
@@ -132,6 +137,7 @@
       p {
         font-size: 30px;
         font-weight: 600;
+        text-shadow: 2px 2px 2px rgb(201, 220, 244);
       }
     }
   }
