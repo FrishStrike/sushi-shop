@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
-import { cards } from "./cards";
+// import { cards } from "./cards";
+import { Card } from "@/models/card";
+import connectDB from "@/lib/connect-db";
 
 export async function GET(req: Request, res: NextResponse) {
   const { searchParams } = new URL(req.url);
 
   const start = searchParams.get("_start");
   const end = searchParams.get("_end");
+
+  await connectDB();
+
+  const cards = await Card.find();
 
   let data = [];
 

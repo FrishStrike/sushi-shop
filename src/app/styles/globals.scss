@@ -6,6 +6,7 @@
 @import "menu";
 @import "cart";
 @import "home";
+@import "signin";
 
 * {
   box-sizing: border-box;
@@ -179,7 +180,7 @@ footer {
 
   .location {
     iframe {
-      width: 80vw;
+      width: 94vw;
       height: 75vh;
     }
   }
@@ -258,8 +259,8 @@ footer {
 
     .list-goods .goods-item {
       img {
-        width: 100px;
-        height: 100px;
+        width: 85px;
+        height: 85px;
       }
       p {
         font-size: 35px;
@@ -305,7 +306,24 @@ footer {
   }
 }
 
+@media (max-width: 640px) {
+  .cart-content {
+    .right-cart {
+      flex-direction: column;
+      width: 85%;
+
+      .right-bottom-cart {
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media (max-width: 600px) {
+  .place .signIn {
+    width: 90vw;
+  }
+
   header .container .img-profile {
     display: none;
   }
@@ -325,16 +343,6 @@ footer {
     }
   }
 
-  .cart-content {
-    .right-cart {
-      flex-direction: column;
-      width: 85%;
-
-      .right-bottom-cart {
-        width: 100%;
-      }
-    }
-  }
   footer {
     left: 50%;
     top: 97%;
@@ -477,5 +485,8 @@ footer {
       left: 46%;
       top: -34px;
     }
+  }
+  .home-container .the-best-thing .list-goods .goods-item p {
+    font-size: 30px;
   }
 }

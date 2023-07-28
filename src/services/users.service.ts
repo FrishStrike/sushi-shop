@@ -1,7 +1,8 @@
 import { IUser } from "@/types/user.interface";
+import { makeBaseUrl } from "@/utils/makeBaseUrl";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/api/users";
+const BASE_URL = `${makeBaseUrl("/api/users")}`;
 
 export const getAllUsers = async () => {
   const users = axios.get<IUser[]>(BASE_URL);

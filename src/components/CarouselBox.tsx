@@ -25,7 +25,7 @@ const CarouselBox = () => {
           <div className="swiper-content">Nice to Meet you)</div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="swiper-content">Enjoy your meal</div>
+          <div className="swiper-content">Enjoy your meal :)</div>
         </SwiperSlide>
       </Swiper>
     </div>

@@ -10,14 +10,18 @@ const cardSlice = createSlice({
     addCard(state, action: PayloadAction<ICardItem>) {
       state.cards.push(action.payload);
     },
-    handleCard(state, action: PayloadAction<number>) {
-      const card = state.cards.find((card) => card.id === action.payload);
+    handleCard(state, action: PayloadAction<string>) {
+      const card = state.cards.find(
+        (card) => card._id === String(action.payload)
+      );
       if (card) {
         card.bought = !card.bought;
       }
     },
-    handleQuantity(state, action: PayloadAction<{ id: number; act: boolean }>) {
-      const card = state.cards.find((card) => card.id === action.payload.id);
+    handleQuantity(state, action: PayloadAction<{ id: string; act: boolean }>) {
+      const card = state.cards.find(
+        (card) => card._id === String(action.payload.id)
+      );
       if (action.payload.act && card) {
         card.quantity += 1;
       } else if (card && card.quantity !== 1) {

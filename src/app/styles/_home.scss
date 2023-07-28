@@ -98,13 +98,18 @@
   border-radius: 20px;
   // margin-right: 200px;
   box-shadow: 5px 5px 10px 5px #bbe8f1;
+  background: url("/img/BreakkieRoll.jpg") no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 10px 10px rgb(222, 93, 93);
 
   h2 {
+    color: #fff;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 40px;
     font-weight: 700;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
   }
 
   .list-goods {
@@ -113,6 +118,8 @@
     align-items: center;
     gap: 3vh;
     padding: 0 15px;
+    border-top: 4px solid black;
+    padding-top: 30px;
 
     .goods-item {
       width: 100%;
@@ -123,21 +130,29 @@
       border-radius: 50px;
       padding: 5px 0;
       background: #c9f3fc32;
+      transition: 0.5s ease;
+
+      &:hover {
+        background: rgba(238, 137, 137, 0.363);
+        transform: scale(1.07);
+      }
 
       img {
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        box-shadow: 0 0 15px 10px #b0e8ef;
+        box-shadow: 0 0 15px 10px rgb(240, 105, 105);
+        border: 2px solid black;
 
         margin-left: 30px;
         margin-right: 15%;
       }
 
       p {
+        color: #fff;
         font-size: 30px;
         font-weight: 600;
-        text-shadow: 2px 2px 2px rgb(201, 220, 244);
+        text-shadow: 2px 2px 3px black;
       }
     }
   }

@@ -3,7 +3,7 @@ import SushiFooter from "@/components/SushiFooter";
 import SushiHeader from "@/components/SushiHeader";
 
 export const metadata = {
-  title: "Home",
+  title: "Home | Sushi Shop",
   description: "Sushi shop with the best sushi in the whole world!",
 };
 

@@ -1,7 +1,8 @@
 import { ICardItem } from "@/types/card.interface";
+import { makeBaseUrl } from "@/utils/makeBaseUrl";
 import axios from "axios";
 
-const BASE_URL = `http://localhost:3000/api/cards`;
+const BASE_URL = `${makeBaseUrl("/api/cards")}`;
 
 export const getAllCards = async () => {
   const data = await axios.get<ICardItem[]>(BASE_URL);

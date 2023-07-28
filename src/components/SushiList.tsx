@@ -33,6 +33,7 @@ const SushiList = () => {
         setIsData(true);
         const data = await getCardsPaginationLeft(first, second);
         setLastPage(page);
+        setToggle(false);
         return data;
       }
       setLastPage(page);
@@ -43,8 +44,6 @@ const SushiList = () => {
         const data = nextDataQ;
         return data;
       }
-
-      console.log("request right");
 
       const [currentData, nextData] = await getCardsPagination(first, second);
       const data = currentData;
@@ -60,11 +59,13 @@ const SushiList = () => {
   });
 
   useEffect(() => {
+    console.log(data);
+
     data?.data.map((card) => {
       if (card) {
         dispatch(
           addCard({
-            id: card.id,
+            _id: card._id,
             quantity: 1,
             title: card.title,
             img: card.img,
@@ -114,8 +115,8 @@ const SushiList = () => {
         <div className="cards">
           {cards.map((card) => (
             <CardItem
-              key={card.id}
-              id={card.id}
+              key={card._id}
+              _id={card._id}
               quantity={card.quantity}
               title={card.title}
               img={card.img}

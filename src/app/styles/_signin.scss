@@ -1,0 +1,136 @@
+.place {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .background {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    background: url("/background.jpg");
+    background-size: cover;
+    position: fixed;
+    filter: blur(5px);
+
+    img {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+
+  .signIn {
+    position: fixed;
+    width: 500px;
+    height: 600px;
+    background: url("/background.jpg");
+    background-size: cover;
+    border: 3px solid black;
+    background-size: cover;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 0 10px 10px rgb(227, 134, 58);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+
+    .signin-h1 h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 45px;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 2px black;
+    }
+
+    .credentials {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .googleButton {
+        padding: 15px 20px;
+        cursor: pointer;
+        border: 4px solid white;
+        border-radius: 20px;
+        background: transparent;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 2px;
+        transition: 0.5s ease;
+        margin-bottom: 20px;
+
+        &:hover {
+          background: #04364159;
+        }
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      .signin-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        width: 400px;
+        height: 300px;
+
+        input {
+          width: 250px;
+          height: 50px;
+          align-items: center;
+          border: none;
+          border-bottom: 2px solid white;
+          background: transparent;
+          outline: none;
+          color: white;
+          font-size: 20px;
+          padding: 0;
+          font-weight: bold;
+          text-shadow: 2px 2px 2px black;
+
+          &::placeholder {
+            font-weight: bold;
+            color: aliceblue;
+            text-shadow: 2px 2px 2px black;
+          }
+        }
+
+        button {
+          font-size: 20px;
+          padding: 15px 64px;
+          border: 4px solid white;
+          border-radius: 20px;
+
+          background: rgba(0, 0, 0, 0.91);
+          color: #fff;
+          cursor: pointer;
+          transition: 0.5s;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+
+    .register {
+      cursor: pointer;
+      font-size: 25px;
+      letter-spacing: 3px;
+      color: white;
+      background: transparent;
+      border: none;
+      text-shadow: 1px 1px 5px rgb(227, 134, 58);
+      filter: brightness(120%);
+    }
+  }
+}

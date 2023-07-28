@@ -69,7 +69,7 @@ const NavBar = () => {
         </li>
         <li className="menu-item">
           {session.data ? (
-            <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+            <Link href="#" onClick={() => signOut({ callbackUrl: "/home" })}>
               <BiLogOut color="white" size={60} />
             </Link>
           ) : (

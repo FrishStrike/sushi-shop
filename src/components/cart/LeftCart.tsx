@@ -13,7 +13,7 @@ const LeftCart = () => {
       {cards.map((card) => {
         if (card.bought) {
           return (
-            <div className="cart-item">
+            <div className="cart-item" key={card._id}>
               <div className="cart-logo">
                 <img src={card.img} alt="" />
                 <div className="cart-info">
@@ -25,7 +25,7 @@ const LeftCart = () => {
                 <div className="cart-handle">
                   <span
                     onClick={() => {
-                      dispatch(handleQuantity({ id: card.id, act: false }));
+                      dispatch(handleQuantity({ id: card._id, act: false }));
                     }}
                   >
                     -
@@ -33,7 +33,7 @@ const LeftCart = () => {
                   <div>{card.quantity}</div>
                   <span
                     onClick={() => {
-                      dispatch(handleQuantity({ id: card.id, act: true }));
+                      dispatch(handleQuantity({ id: card._id, act: true }));
                     }}
                   >
                     +
@@ -42,7 +42,7 @@ const LeftCart = () => {
                 <button
                   className="cart-button"
                   onClick={() => {
-                    dispatch(handleCard(card.id));
+                    dispatch(handleCard(card._id));
                   }}
                 >
                   <span></span>

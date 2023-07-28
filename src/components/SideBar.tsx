@@ -93,7 +93,7 @@ const SideBar = () => {
       </div>
       <div>
         {session?.data ? (
-          <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+          <Link href="#" onClick={() => signOut({ callbackUrl: "/home" })}>
             <BiLogOut color="white" size={50} />
           </Link>
         ) : (
