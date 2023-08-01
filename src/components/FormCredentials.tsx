@@ -1,6 +1,5 @@
 "use client";
 import { signIn } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 import type { FormEventHandler } from "react";
 
@@ -10,13 +9,14 @@ const FormCredentials = () => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    console.log(e.currentTarget);
 
     const res = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
       redirect: false,
     });
+
+    console.log(res?.error);
 
     if (res && !res.error) {
       router.push("/home");

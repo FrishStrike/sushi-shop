@@ -16,10 +16,15 @@ export const authConfig: AuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials.password) return null;
+        const users = await getAllUsers();
 
         const currentUser = (await getAllUsers()).data.find(
           (user) => user.email === credentials.email.toLowerCase()
         );
+
+        if (!currentUser) {
+          return null;
+        }
 
         if (currentUser?.password === credentials.password) {
           const { password, ...userWithOutPass } = currentUser;

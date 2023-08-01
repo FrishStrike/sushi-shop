@@ -1,5 +1,6 @@
 import FormCredentials from "@/components/FormCredentials";
 import GoogleButton from "@/components/GoogleButton";
+import MainButton from "@/components/MainButton";
 
 const signIn = () => {
   return (
@@ -14,7 +15,9 @@ const signIn = () => {
         <div className="credentials">
           <GoogleButton />
           <FormCredentials />
-          <button className="register">Register</button>
+          <MainButton className="register" href="/registration">
+            Registration
+          </MainButton>
         </div>
       </div>
     </div>

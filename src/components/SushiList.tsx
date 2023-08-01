@@ -11,6 +11,7 @@ import { addCard } from "@/store/cardSlice";
 import { ICardItem } from "@/types/card.interface";
 import Arrows from "./Arrows";
 import { AxiosResponse } from "axios";
+import Modal from "./Modal";
 
 const SushiList = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +21,33 @@ const SushiList = () => {
   const [nextDataQ, setNextDataQ] = useState<AxiosResponse<ICardItem[]>>();
   const [isData, setIsData] = useState(true);
   const [lastPage, setLastPage] = useState(1);
+  const [modalActive, setModalActive] = useState(false);
+  const [modalImg, setModalImg] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalPrice, setModalPrice] = useState("");
+  const [modalId, setModalId] = useState("");
+
+  const setActive = () => {
+    setModalActive(!modalActive);
+  };
+
+  const setModalContent = ({
+    img,
+    title,
+    price,
+    _id,
+  }: {
+    img: string;
+    title: string;
+    price: string;
+    _id: string;
+  }) => {
+    setModalImg(img);
+    setModalTitle(title);
+    setModalPrice(price);
+    setModalId(_id);
+    setModalActive(!modalActive);
+  };
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["cards", page],
@@ -122,6 +150,8 @@ const SushiList = () => {
               img={card.img}
               price={card.price}
               bought={card.bought}
+              onClick={setActive}
+              setModalContent={setModalContent}
             />
           ))}
         </div>
@@ -132,6 +162,14 @@ const SushiList = () => {
         setPage={setPage}
         second={true}
         isData={isData}
+      />
+      <Modal
+        active={modalActive}
+        setActive={setActive}
+        img={modalImg}
+        title={modalTitle}
+        price={modalPrice}
+        id={modalId}
       />
     </main>
   );

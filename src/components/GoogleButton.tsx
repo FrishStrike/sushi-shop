@@ -7,7 +7,7 @@ const GoogleButton = () => {
       className="googleButton"
       onClick={() => signIn("google", { callbackUrl: "/home" })}
     >
-      SignIn with Google
+      Sign In with Google
     </button>
   );
 };

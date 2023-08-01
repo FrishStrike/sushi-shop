@@ -1,9 +1,37 @@
+"use client";
 import { ICardItem } from "@/types/card.interface";
 import CartButton from "./CartButton";
 
-const CardItem: React.FC<ICardItem> = ({ title, img, price, _id }) => {
+interface props extends ICardItem {
+  onClick?: () => void;
+  setModalContent: ({
+    img,
+    title,
+    price,
+    _id,
+  }: {
+    img: string;
+    title: string;
+    price: string;
+    _id: string;
+  }) => void;
+}
+
+const CardItem: React.FC<props> = ({
+  title,
+  img,
+  price,
+  _id,
+  onClick,
+  setModalContent,
+}) => {
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={() =>
+        setModalContent({ img: img, title: title, price: price, _id: _id })
+      }
+    >
       <img src={img} alt="" />
       <div className="card-info">
         <h3>{title}</h3>
