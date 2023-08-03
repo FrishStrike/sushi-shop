@@ -1,9 +1,10 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import type { FormEventHandler } from "react";
+import { useState, type FormEventHandler } from "react";
 
 const FormCredentials = () => {
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
@@ -18,8 +19,19 @@ const FormCredentials = () => {
 
     console.log(res?.error);
 
-    if (res && !res.error) {
+    if (res && !res?.error) {
       router.push("/home");
+    } else {
+      console.log(res);
+      if (res?.error === "Wrong email") {
+        setError("Wrong email");
+      }
+      if (res?.error === "Wrong password") {
+        setError("Wrong password");
+      }
+      if (res?.error === "The fields are empty") {
+        setError("The fields are empty");
+      }
     }
   };
 
@@ -33,6 +45,7 @@ const FormCredentials = () => {
       />
       <input type="password" name="password" placeholder="Password..." />
       <button type="submit">Sign In</button>
+      {error && <h2 className="error-signIn">{error}</h2>}
     </form>
   );
 };

@@ -5,6 +5,27 @@
   flex-wrap: wrap;
   gap: 20px;
 
+  .card-skeleton-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .card-skeleton {
+      width: 230px;
+      height: 265px;
+      // border: 3px solid #0c0b0b;
+      // border-radius: 12px;
+      overflow: hidden;
+
+      .info-skeleton {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+
   .card {
     width: 230px;
     height: 265px;

@@ -1,5 +1,6 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { FaUserCircle } from "react-icons/fa";
 
 interface Props {
@@ -7,10 +8,14 @@ interface Props {
 }
 
 const ImageProfile: React.FC<Props> = ({ className }) => {
+  const router = useRouter();
   const session = useSession();
   if (!session?.data) {
     return (
-      <button className={`sign-in-btn ${className}`} onClick={() => signIn()}>
+      <button
+        className={`sign-in-btn ${className}`}
+        onClick={() => router.push("/api/auth/signin")}
+      >
         Sign In
       </button>
     );

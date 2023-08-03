@@ -15,7 +15,19 @@ export async function POST(req: Request, res: Response) {
 
   await connectDB();
 
-  await User.create(user);
+  try {
+    const users: IUser[] = await User.find();
 
-  return NextResponse.json(user);
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email.toLowerCase() === user.email.toLowerCase()) {
+        throw new Error("This user already exists");
+      }
+    }
+
+    await User.create(user);
+  } catch (error) {
+    return NextResponse.json(error);
+  }
+
+  return NextResponse.json("Register is success");
 }

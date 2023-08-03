@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardItem from "./CardItem";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -12,20 +12,27 @@ import { ICardItem } from "@/types/card.interface";
 import Arrows from "./Arrows";
 import { AxiosResponse } from "axios";
 import Modal from "./Modal";
+import "react-loading-skeleton/dist/skeleton.css";
+import CardSkeleton from "./CardSkeleton";
+import SuccessWindow from "./SuccessWindow";
 
 const SushiList = () => {
   const dispatch = useAppDispatch();
+
   const [cards, setCards] = useState<ICardItem[]>([]);
   const [page, setPage] = useState(1);
   const [toggle, setToggle] = useState(false);
   const [nextDataQ, setNextDataQ] = useState<AxiosResponse<ICardItem[]>>();
   const [isData, setIsData] = useState(true);
   const [lastPage, setLastPage] = useState(1);
+
   const [modalActive, setModalActive] = useState(false);
   const [modalImg, setModalImg] = useState("");
   const [modalTitle, setModalTitle] = useState("");
   const [modalPrice, setModalPrice] = useState("");
   const [modalId, setModalId] = useState("");
+
+  const [successWindow, setSuccessWindow] = useState<boolean[]>([]);
 
   const setActive = () => {
     setModalActive(!modalActive);
@@ -114,7 +121,9 @@ const SushiList = () => {
   if (isLoading) {
     return (
       <div className="container">
-        <h3>Loading...</h3>
+        <div className="cards">
+          <CardSkeleton cards={8} />
+        </div>
       </div>
     );
   }
@@ -138,6 +147,7 @@ const SushiList = () => {
 
   return (
     <main>
+      <SuccessWindow active={successWindow} />
       <Arrows page={page} cards={cards} setPage={setPage} isData={isData} />
       <div className="container">
         <div className="cards">
@@ -152,6 +162,8 @@ const SushiList = () => {
               bought={card.bought}
               onClick={setActive}
               setModalContent={setModalContent}
+              setSuccessWindow={setSuccessWindow}
+              successWindow={successWindow}
             />
           ))}
         </div>
@@ -166,6 +178,8 @@ const SushiList = () => {
       <Modal
         active={modalActive}
         setActive={setActive}
+        setSuccessWindow={setSuccessWindow}
+        successWindow={successWindow}
         img={modalImg}
         title={modalTitle}
         price={modalPrice}

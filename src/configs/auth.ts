@@ -15,23 +15,24 @@ export const authConfig: AuthOptions = {
         password: { label: "password", type: "password", required: true },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials.password) return null;
-        const users = await getAllUsers();
+        if (!credentials?.email || !credentials.password) {
+          throw new Error("The fields are empty");
+        }
 
         const currentUser = (await getAllUsers()).data.find(
-          (user) => user.email === credentials.email.toLowerCase()
+          (user) => user.email.toLowerCase() === credentials.email.toLowerCase()
         );
 
         if (!currentUser) {
-          return null;
+          throw new Error("Wrong email");
         }
 
         if (currentUser?.password === credentials.password) {
           const { password, ...userWithOutPass } = currentUser;
           return userWithOutPass as User;
+        } else {
+          throw new Error("Wrong password");
         }
-
-        return null;
       },
     }),
   ],

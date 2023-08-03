@@ -12,6 +12,7 @@ const page = () => {
         </div>
         <div className="credentials">
           <FormRegistration />
+          <p className="help">2 clicks</p>
         </div>
       </div>
     </div>

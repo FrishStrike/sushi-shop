@@ -3,6 +3,7 @@ import { ICardItem } from "@/types/card.interface";
 import CartButton from "./CartButton";
 
 interface props extends ICardItem {
+  setSuccessWindow: (param: boolean[]) => void;
   onClick?: () => void;
   setModalContent: ({
     img,
@@ -15,6 +16,7 @@ interface props extends ICardItem {
     price: string;
     _id: string;
   }) => void;
+  successWindow: boolean[];
 }
 
 const CardItem: React.FC<props> = ({
@@ -22,8 +24,9 @@ const CardItem: React.FC<props> = ({
   img,
   price,
   _id,
-  onClick,
   setModalContent,
+  setSuccessWindow,
+  successWindow,
 }) => {
   return (
     <div
@@ -36,7 +39,11 @@ const CardItem: React.FC<props> = ({
       <div className="card-info">
         <h3>{title}</h3>
         <span className="price">{price}</span>
-        <CartButton _id={_id} />
+        <CartButton
+          _id={_id}
+          setSuccessWindow={setSuccessWindow}
+          successWindow={successWindow}
+        />
       </div>
     </div>
   );
