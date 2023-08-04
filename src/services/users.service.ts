@@ -12,6 +12,5 @@ export const getAllUsers = async () => {
 
 export const setUser = async (data: IUser) => {
   const res = await axios.post(BASE_URL, data);
-  console.log(res);
   return res;
 };

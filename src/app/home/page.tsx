@@ -1,6 +1,6 @@
 import CarouselBox from "@/components/CarouselBox";
 import FirstSwiper from "@/components/FirstSwiper";
-import ListGoods from "@/components/listGoods";
+import ListGoods from "@/components/ListGoods";
 
 const page = () => {
   return (

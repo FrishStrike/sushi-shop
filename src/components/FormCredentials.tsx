@@ -22,7 +22,6 @@ const FormCredentials = () => {
     if (res && !res?.error) {
       router.push("/home");
     } else {
-      console.log(res);
       if (res?.error === "Wrong email") {
         setError("Wrong email");
       }

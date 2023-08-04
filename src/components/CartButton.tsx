@@ -9,8 +9,8 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 interface IProps {
   _id: string;
   className?: string;
-  setSuccessWindow: (param: boolean[]) => void;
-  successWindow: boolean[];
+  setSuccessWindow?: (param: boolean[]) => void;
+  successWindow?: boolean[];
 }
 
 const CartButton: FC<IProps> = ({
@@ -24,11 +24,12 @@ const CartButton: FC<IProps> = ({
   const toggle = cards.find((card) => card._id === _id);
 
   useEffect(() => {
-    if (toggle?.bought) {
-      setSuccessWindow([...successWindow, false, true]);
-    } else {
-      setSuccessWindow([false]);
-    }
+    if (setSuccessWindow && successWindow)
+      if (toggle?.bought) {
+        setSuccessWindow([...successWindow, false, true]);
+      } else {
+        setSuccessWindow([false]);
+      }
   }, [toggle?.bought]);
 
   const addToBasket: React.MouseEventHandler<SVGElement> = (e) => {

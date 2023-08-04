@@ -2,6 +2,7 @@
 
 import { requestSendMail } from "@/services/mail.service";
 import { setUser } from "@/services/users.service";
+import { AxiosResponse } from "axios";
 import { useRouter } from "next/navigation";
 import { FormEventHandler, useState } from "react";
 
@@ -47,14 +48,20 @@ const FormRegistration = () => {
         return;
       }
 
-      const code = await requestSendMail(user);
+      const code: any = await requestSendMail(user);
+
+      if (code === "Email send error") {
+        setError("Email error");
+        return;
+      }
 
       if (code.data === "Error send mail") {
         setError("This mail is not exist");
         return;
       }
 
-      setUserCode(code.data);
+      setUserCode(code.data.code);
+
       setActive(true);
     } else {
       setError("The fields are empty!");

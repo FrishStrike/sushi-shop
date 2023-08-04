@@ -5,7 +5,7 @@ import CartButton from "./CartButton";
 interface props {
   active: boolean;
   setActive: () => void;
-  setSuccessWindow: (param: boolean[]) => void;
+  setSuccessWindow?: (param: boolean[]) => void;
   img: string;
   title: string;
   price: string;

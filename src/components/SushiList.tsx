@@ -94,8 +94,6 @@ const SushiList = () => {
   });
 
   useEffect(() => {
-    console.log(data);
-
     data?.data.map((card) => {
       if (card) {
         dispatch(
@@ -147,7 +145,10 @@ const SushiList = () => {
 
   return (
     <main>
-      <SuccessWindow active={successWindow} />
+      <SuccessWindow
+        active={successWindow}
+        setSuccessWindow={setSuccessWindow}
+      />
       <Arrows page={page} cards={cards} setPage={setPage} isData={isData} />
       <div className="container">
         <div className="cards">
