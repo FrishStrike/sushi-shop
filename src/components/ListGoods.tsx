@@ -102,6 +102,7 @@ const ListGoods = () => {
       <Modal
         active={modalActive}
         setActive={setActive}
+        successWindow={[]}
         id={modalId}
         img={modalImg}
         price={modalPrice}

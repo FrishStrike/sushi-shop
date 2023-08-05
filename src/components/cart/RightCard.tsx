@@ -1,12 +1,21 @@
 "use client";
 import { discountCalculate } from "@/utils/discountСalculate";
-import { sumPrice } from "@/utils/sumPrice";
 import { FormEventHandler, useEffect, useState } from "react";
+import { useAppSelector } from "@/store/hook";
 
 const RightCard = () => {
   const [code, setCode] = useState("");
   const [resultPrice, setResultPrice] = useState(0);
-  const price = sumPrice();
+
+  const cards = useAppSelector((state) => state.cards.cards);
+  let result = 0;
+  cards.forEach((card) => {
+    if (card.bought) {
+      result += Number(card.price.substring(1)) * card.quantity;
+    }
+  });
+
+  const price = result;
 
   useEffect(() => {
     if (code === "pineapple") setResultPrice(discountCalculate(20, price));

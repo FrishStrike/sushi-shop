@@ -10,7 +10,7 @@ interface IProps {
   _id: string;
   className?: string;
   setSuccessWindow?: (param: boolean[]) => void;
-  successWindow?: boolean[];
+  successWindow: boolean[];
 }
 
 const CartButton: FC<IProps> = ({
