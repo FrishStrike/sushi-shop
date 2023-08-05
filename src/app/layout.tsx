@@ -9,10 +9,10 @@ const mulish = Mulish({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Sushi Food",
-  description: "The best sushi restaurant in Yalta",
-};
+// export const metadata = {
+//   title: "Sushi Food",
+//   description: "The best sushi restaurant in Yalta",
+// };
 
 export default function RootLayout({
   children,

@@ -15,8 +15,8 @@ const page = () => {
           </p>
         </div>
         <div className="welcome-btn">
-          <MainButton href="/home" children="HOME" />
-          <MainButton href="/menu" children="MENU" />
+          <MainButton href="/home">HOME</MainButton>
+          <MainButton href="/menu">MENU</MainButton>
         </div>
       </div>
     </div>
