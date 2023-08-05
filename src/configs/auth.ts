@@ -39,4 +39,10 @@ export const authConfig: AuthOptions = {
   pages: {
     signIn: "/signin",
   },
+  callbacks: {
+    async jwt({ token }) {
+      token.isAdmin = true;
+      return token;
+    },
+  },
 };
