@@ -46,6 +46,20 @@ const NavBar = () => {
         <span className="btn-line"></span>
       </button>
 
+      {session.data ? (
+        <Link
+          className={`log-in ${ulClass}`}
+          href="#"
+          onClick={() => signOut({ callbackUrl: "/home" })}
+        >
+          <BiLogOut color="white" size={60} />
+        </Link>
+      ) : (
+        <Link className={`log-in ${ulClass}`} href="/api/auth/signin">
+          <BiLogIn color="white" size={60} />
+        </Link>
+      )}
+
       <ul className={`menu ${ulClass}`}>
         <li className="menu-item logo-navbar">
           <Link href="/" className={balooBhai.className}>
@@ -66,17 +80,6 @@ const NavBar = () => {
           <Link className="menu-link" href="/cart">
             Cart
           </Link>
-        </li>
-        <li className="menu-item">
-          {session.data ? (
-            <Link href="#" onClick={() => signOut({ callbackUrl: "/home" })}>
-              <BiLogOut color="white" size={60} />
-            </Link>
-          ) : (
-            <Link href="/api/auth/signin">
-              <BiLogIn color="white" size={60} />
-            </Link>
-          )}
         </li>
       </ul>
     </nav>

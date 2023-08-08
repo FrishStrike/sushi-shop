@@ -9,6 +9,7 @@
     z-index: -10;
     width: 100%;
     height: 100vh;
+    // max-height: 600px;
     background: url("/background.jpg");
     background-size: cover;
     position: fixed;
@@ -23,7 +24,7 @@
   .signIn {
     position: fixed;
     width: 500px;
-    height: 600px;
+    height: 80%;
     background: url("/background.jpg");
     background-size: cover;
     border: 3px solid black;
@@ -34,7 +35,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 60px;
+    gap: 12%;
+    overflow-y: auto;
 
     .error-signIn {
       position: absolute;
@@ -149,6 +151,7 @@
     }
 
     .register {
+      margin-top: 10px 0;
       cursor: pointer;
       font-size: 25px;
       letter-spacing: 3px;

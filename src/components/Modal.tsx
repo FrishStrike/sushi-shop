@@ -5,19 +5,15 @@ import CartButton from "./CartButton";
 interface props {
   active: boolean;
   setActive: () => void;
-  setSuccessWindow?: (param: boolean[]) => void;
   img: string;
   title: string;
   price: string;
   id: string;
-  successWindow: boolean[];
 }
 
 const Modal: React.FC<props> = ({
   active,
   setActive,
-  setSuccessWindow,
-  successWindow,
   img,
   title,
   price,
@@ -30,12 +26,7 @@ const Modal: React.FC<props> = ({
         <div className="modal-info">
           <div className="title">
             <h1>{title}</h1>
-            <CartButton
-              className="cart"
-              _id={id}
-              successWindow={successWindow}
-              setSuccessWindow={setSuccessWindow}
-            />
+            <CartButton className="cart" _id={id} />
           </div>
           <p>{price}</p>
           <img src="/pineapple.jpg" alt="" />

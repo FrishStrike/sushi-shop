@@ -34,45 +34,6 @@ a {
   margin: 3% 0 0 19%;
 }
 
-.success-window {
-  position: absolute;
-  top: -10vh;
-  right: 50vw;
-  transform: translateX(50%);
-  width: 300px;
-  height: 50px;
-  padding: 5px;
-  border-radius: 22px;
-  background: greenyellow;
-  animation: success-window 2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  z-index: 300;
-
-  h3 {
-    text-align: center;
-    font-weight: bold;
-  }
-  span {
-    font-size: 30px;
-    margin-top: 5px;
-  }
-}
-
-@keyframes success-window {
-  0% {
-    top: -10vh;
-  }
-  50% {
-    top: 5vh;
-  }
-  100% {
-    top: -10vh;
-  }
-}
-
 footer {
   position: fixed;
   width: 2500px;
@@ -212,6 +173,13 @@ footer {
   }
   .button-open .btn-line:nth-child(4) {
     transform: scaleX(0);
+  }
+
+  header .navbar .button-open {
+    position: fixed;
+    z-index: 400;
+    top: 1%;
+    right: 1%;
   }
 
   .container {
@@ -409,9 +377,6 @@ footer {
 
     .welcome-btn button {
       font-size: 0.9rem;
-
-      width: 8rem;
-      height: 2rem;
     }
   }
 
@@ -431,6 +396,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .welcome .background {
+    left: -100px;
+  }
+
+  .carousel-content .swiper {
+    margin: 0 0;
+  }
+
   .modal .modal-content {
     img {
       width: 180px;
@@ -439,11 +412,11 @@ footer {
     .modal-info {
       .title {
         h1 {
-          font-size: 15px;
+          font-size: 20px;
           margin-top: 5px;
         }
         svg {
-          font-size: 20px;
+          font-size: 30px;
         }
       }
       p {
@@ -496,21 +469,37 @@ footer {
     height: 60px;
   }
 
-  .cards .card {
-    width: 350px;
-    height: 350px;
+  .cards {
+    .card-skeleton-list {
+      .card-skeleton {
+        width: 350px;
+        height: 350px;
+        div {
+          height: 100%;
+        }
 
-    .card-info {
-      width: 350px;
-
-      h3 {
-        font-size: 24px;
+        .info-skeleton {
+          margin-top: 50px;
+        }
       }
     }
 
-    img {
+    .card {
       width: 350px;
-      height: 250px;
+      height: 350px;
+
+      .card-info {
+        width: 350px;
+
+        h3 {
+          font-size: 24px;
+        }
+      }
+
+      img {
+        width: 350px;
+        height: 250px;
+      }
     }
   }
 }
@@ -519,11 +508,19 @@ footer {
   .the-best-thing {
     height: 420px;
     .list-goods {
-      gap: 0.6vh;
+      gap: 20px;
 
-      .goods-item img {
-        width: 60px;
-        height: 60px;
+      .goods-item {
+        height: 70%;
+
+        p {
+          font-size: 25px;
+        }
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
       }
     }
   }
@@ -543,6 +540,20 @@ footer {
 }
 
 // Max Height
+
+@media (max-height: 700px) {
+  .place .signIn {
+    min-height: 300px;
+
+    .signin-h1 h1 {
+      display: none;
+    }
+
+    .register {
+      margin-top: 30px;
+    }
+  }
+}
 
 @media (max-height: 580px) {
   header .navbar .menu {

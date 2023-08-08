@@ -14,7 +14,7 @@ import { AxiosResponse } from "axios";
 import Modal from "./Modal";
 import "react-loading-skeleton/dist/skeleton.css";
 import CardSkeleton from "./CardSkeleton";
-import SuccessWindow from "./SuccessWindow";
+import SuccessWindow from "./success-window/SuccessWindow";
 
 const SushiList = () => {
   const dispatch = useAppDispatch();
@@ -32,7 +32,8 @@ const SushiList = () => {
   const [modalPrice, setModalPrice] = useState("");
   const [modalId, setModalId] = useState("");
 
-  const [successWindow, setSuccessWindow] = useState<boolean[]>([]);
+  const [successWindowWithOutModal, setSuccessWindowWithOutModal] =
+    useState(false);
 
   const setActive = () => {
     setModalActive(!modalActive);
@@ -145,10 +146,7 @@ const SushiList = () => {
 
   return (
     <main>
-      <SuccessWindow
-        active={successWindow}
-        setSuccessWindow={setSuccessWindow}
-      />
+      <SuccessWindow active={successWindowWithOutModal} />
       <Arrows page={page} cards={cards} setPage={setPage} isData={isData} />
       <div className="container">
         <div className="cards">
@@ -163,8 +161,8 @@ const SushiList = () => {
               bought={card.bought}
               onClick={setActive}
               setModalContent={setModalContent}
-              setSuccessWindow={setSuccessWindow}
-              successWindow={successWindow}
+              modal={modalActive}
+              setSuccessWindowWithOutModal={setSuccessWindowWithOutModal}
             />
           ))}
         </div>
@@ -179,8 +177,6 @@ const SushiList = () => {
       <Modal
         active={modalActive}
         setActive={setActive}
-        setSuccessWindow={setSuccessWindow}
-        successWindow={successWindow}
         img={modalImg}
         title={modalTitle}
         price={modalPrice}
