@@ -6,23 +6,6 @@ header {
     display: flex;
     justify-content: space-between;
 
-    .sign-in-btn {
-      margin-right: 110px;
-      font-size: 20px;
-      padding: 20px 24px;
-      border: 3px solid black;
-      border-radius: 30px;
-      transition: 0.3s ease;
-
-      background: rgba(0, 0, 0, 0.91);
-      color: #fff;
-      cursor: pointer;
-
-      &:active {
-        transform: scale(1.1);
-      }
-    }
-
     .img-profile {
       position: relative;
       top: 10px;
@@ -42,6 +25,23 @@ header {
       }
     }
 
+    .sign-in-btn {
+      margin-right: 110px;
+      font-size: 20px;
+      padding: 20px 24px;
+      border: 3px solid black;
+      border-radius: 30px;
+      transition: 0.3s ease;
+
+      background: rgba(0, 0, 0, 0.91);
+      color: #fff;
+      cursor: pointer;
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+
     h1 {
       display: inline-block;
       font-style: normal;
@@ -58,6 +58,28 @@ header {
   // NavBar
 
   .navbar {
+    .img-profile {
+      color: white;
+      position: absolute;
+      top: 2%;
+      left: 5%;
+      z-index: 300;
+      cursor: pointer;
+      transform: translateY(-300px);
+      transition: 0.5s ease;
+
+      img {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        transition: 0.5s ease;
+
+        &:hover {
+          box-shadow: 0 0 10px 2px #bbe8f1;
+        }
+      }
+    }
+
     .sign-in-btn {
       font-size: 20px;
       padding: 20px 24px;
