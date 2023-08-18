@@ -20,7 +20,7 @@ const SuccessWindow: React.FC<props> = ({ active }) => {
 
   if (activeSuccessWindow) {
     return (
-      <div className={classes.successWindow}>
+      <div className={activeSuccessWindow ? classes.successWindow : ""}>
         <span>
           <BsFillCheckCircleFill />
         </span>
